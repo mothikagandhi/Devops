@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>cgpa</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            function grade(g)
+            {
+              if(g>=91 && g<=100)
+                    return 10;
+                else if(g>80 && g<=90)
+                    return 9;
+                else if(g>70 && g<=80)
+                    return 8;
+                else if(g>60 && g<=70)
+                    return 7;
+                else if(g>50 && g<=60)
+                    return 6;
+                else if(g<=50)
+                    return 0;
+            }
+            function calculation()
+            {
+               var credit1=parseInt(document.getElementById("a1").value);
+               var credit2=parseInt(document.getElementById("a2").value);
+               var credit3=parseInt(document.getElementById("a3").value);
+               var credit4=parseInt(document.getElementById("a4").value);
+               var credit5=parseInt(document.getElementById("a5").value);
+               var credit6=parseInt(document.getElementById("a6").value);
+               var credit7=parseInt(document.getElementById("a7").value);
+               var credit8=parseInt(document.getElementById("a8").value);
+
+               var grade1=grade(parseInt(document.getElementById("b1").value));
+               var grade2=grade(parseInt(document.getElementById("b2").value));
+               var grade3=grade(parseInt(document.getElementById("b3").value));
+               var grade4=grade(parseInt(document.getElementById("b4").value));
+               var grade5=grade(parseInt(document.getElementById("b5").value));
+               var grade6=grade(parseInt(document.getElementById("b6").value));
+               var grade7=grade(parseInt(document.getElementById("b7").value));
+               var grade8=grade(parseInt(document.getElementById("b8").value));
+               
+               var tot_credits,cgpa,tot_val;
+               tot_val=(credit1* grade1)+(credit2*grade2)+(credit3* grade3)+(credit4* grade4)+(credit5* grade5)+(credit6* grade6)+(credit7* grade7)+(credit8* grade8);
+               tot_credits=credit1+credit2+credit3+credit4+credit5+credit6+credit7+credit8;
+               cgpa=tot_val/tot_credits;
+               document.getElementById("res").innerHTML = cgpa;
+            }
+        </script>
+    </head>
+    <body>
+        <center><h1><strong>CGPA Calculator</strong></h1>
+          
+            enter 1:<input type="number" id="a1"><br>
+            enter 2:<input type="number" id="a2"><br>
+            enter 3:<input type="number" id="a3"><br>
+            enter 4:<input type="number" id="a4"><br>
+            enter 5:<input type="number" id="a5"><br>
+            enter 1:<input type="number" id="a6"><br>
+            enter 2:<input type="number" id="a7"><br>
+            enter 3:<input type="number" id="a8"><br>
+          grade1:<input type="text" id="b1"><br>
+          grade2:<input type="text" id="b2"><br>
+          grade3:<input type="text" id="b3"><br>
+          grade4:<input type="text" id="b4"><br>
+          grade5:<input type="text" id="b5"><br>
+          labgrade1:<input type="text" id="b6"><br>
+          labgrade2:<input type="text" id="b7"><br>
+          labgrade3:<input type="text" id="b8"><br>
+    
+.js"></script>
+    
+        
+          <button type="button" onclick="calculation()"><h3>CGPA</h3></button>  <button id="res" ></button>
+        </center>
+    </body>
+</html>
